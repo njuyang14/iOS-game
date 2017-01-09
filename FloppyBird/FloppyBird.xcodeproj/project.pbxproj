@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F51D06C1E23D8C300A888F4 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F51D06B1E23D8C300A888F4 /* Clouds.swift */; };
+		2F51D06E1E23D8E300A888F4 /* Grounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F51D06D1E23D8E300A888F4 /* Grounds.swift */; };
+		2F51D0701E23D97400A888F4 /* Hills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F51D06F1E23D97400A888F4 /* Hills.swift */; };
+		2F5E8FBF1E23B6360028A02C /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E8FBE1E23B6360028A02C /* Textures.swift */; };
+		2F697B331E23CC3800715749 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F697B321E23CC3800715749 /* Contact.swift */; };
+		2FACC0A21E23B32C00358F16 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FACC0A11E23B32C00358F16 /* Bird.swift */; };
+		2FEDA75B1E239B460054A060 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEDA75A1E239B460054A060 /* Colors.swift */; };
 		3F18765D1D96E0F100D63E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18765C1D96E0F100D63E5A /* AppDelegate.swift */; };
 		3F1876631D96E0F100D63E5A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1876621D96E0F100D63E5A /* GameScene.swift */; };
 		3F1876651D96E0F100D63E5A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1876641D96E0F100D63E5A /* GameViewController.swift */; };
@@ -28,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F51D06B1E23D8C300A888F4 /* Clouds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
+		2F51D06D1E23D8E300A888F4 /* Grounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grounds.swift; sourceTree = "<group>"; };
+		2F51D06F1E23D97400A888F4 /* Hills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hills.swift; sourceTree = "<group>"; };
+		2F5E8FBE1E23B6360028A02C /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Textures.swift; path = ../Textures.swift; sourceTree = "<group>"; };
+		2F697B321E23CC3800715749 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Contact.swift; sourceTree = "<group>"; };
+		2FACC0A11E23B32C00358F16 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bird.swift; path = ../Bird.swift; sourceTree = "<group>"; };
+		2FEDA75A1E239B460054A060 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3F1876591D96E0F100D63E5A /* FloppyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloppyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F18765C1D96E0F100D63E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F1876621D96E0F100D63E5A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -80,6 +94,13 @@
 		3F18765B1D96E0F100D63E5A /* FloppyBird */ = {
 			isa = PBXGroup;
 			children = (
+				2FACC0A11E23B32C00358F16 /* Bird.swift */,
+				2F51D06B1E23D8C300A888F4 /* Clouds.swift */,
+				2F51D06F1E23D97400A888F4 /* Hills.swift */,
+				2F51D06D1E23D8E300A888F4 /* Grounds.swift */,
+				2FEDA75A1E239B460054A060 /* Colors.swift */,
+				2F5E8FBE1E23B6360028A02C /* Textures.swift */,
+				2F697B321E23CC3800715749 /* Contact.swift */,
 				3F18767A1D997C1000D63E5A /* GameResources */,
 				3F1876911D99826B00D63E5A /* ViewController */,
 				3F1876901D9981AE00D63E5A /* Scenes */,
@@ -250,10 +271,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1876631D96E0F100D63E5A /* GameScene.swift in Sources */,
+				2F51D0701E23D97400A888F4 /* Hills.swift in Sources */,
 				3F1876651D96E0F100D63E5A /* GameViewController.swift in Sources */,
+				2F51D06E1E23D8E300A888F4 /* Grounds.swift in Sources */,
+				2F697B331E23CC3800715749 /* Contact.swift in Sources */,
+				2F51D06C1E23D8C300A888F4 /* Clouds.swift in Sources */,
 				3F1876771D97076700D63E5A /* MenuScene.swift in Sources */,
+				2FEDA75B1E239B460054A060 /* Colors.swift in Sources */,
 				3F18765D1D96E0F100D63E5A /* AppDelegate.swift in Sources */,
+				2F5E8FBF1E23B6360028A02C /* Textures.swift in Sources */,
 				3F1876791D97148000D63E5A /* GameOverScene.swift in Sources */,
+				2FACC0A21E23B32C00358F16 /* Bird.swift in Sources */,
 				3F1876751D96E25D00D63E5A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +444,7 @@
 				3F1876731D96E0F100D63E5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

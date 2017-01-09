@@ -12,6 +12,7 @@ class GameOverScene: SKScene {
     
     // MARK: - Private class constants
     private let label = SKLabelNode()
+    private let myBird = SKSpriteNode(imageNamed:"")
     
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {

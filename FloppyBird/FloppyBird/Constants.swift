@@ -2,9 +2,7 @@
 //  Constants.swift
 //  FloppyBird
 //
-//  Created by Jeremy Novak on 9/24/16.
-//  Copyright © 2016 SpriteKit Book. All rights reserved.
-//
+
 
 import SpriteKit
 
