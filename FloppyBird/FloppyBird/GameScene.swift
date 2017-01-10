@@ -13,8 +13,10 @@ class GameScene: SKScene {
     // MARK: - Private class constants
     private let label = SKLabelNode()
     
+    private var lastUpdateTime: TimeInterval = 0
+    
     private let bird = Bird()
-    private let cloud = Clouds()
+    private let cloudController = CloudController()
     
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
@@ -47,15 +49,42 @@ class GameScene: SKScene {
         label.fontSize = 44.0
         label.text = "GameScene"
         label.position = kScreenCenter
-        cloud.setInitPos(pos: CGPoint(x:frame.size.width,y:frame.size.height*random(min:0.3,max:0.8)))
+        
+        //add enemy
+        let appear = SKAction.run ({() in self.enemyAppear()})
+        let delay = SKAction.wait(forDuration: (2.0))
+        self.run(SKAction.repeatForever(SKAction.sequence([appear,delay])))
         
         self.addChild(label)
         self.addChild(bird)
+       //self.addChild(cloudController)
+    }
+    
+    func enemyAppear(){
+        let cloud = Clouds()
+        cloud.setInitPos(pos: CGPoint(x:frame.size.width,y:frame.size.height*random(min:0.3,max:0.8)))//init appear pos
         self.addChild(cloud)
     }
     
     // MARK: - Update
     override func update(_ currentTime: TimeInterval) {
+        let delta = currentTime - lastUpdateTime
+        lastUpdateTime = currentTime
+        
+        cloudController.update(delta: delta)
+        //add cloud per 5 sec
+        /*if(delta>5){
+            let cloud = Clouds()
+            cloud.setInitPos(pos: CGPoint(x:frame.size.width,y:frame.size.height*random(min:0.3,max:0.8)))//init appear pos
+            self.addChild(cloud)
+            allCloud.append(cloud)
+        }*/
+        
+        for one in self.children{
+            if let cloud = one as? Clouds{
+                cloud.update(delta: delta)
+            }
+        }
     }
     
     // MARK: - Touch Events
