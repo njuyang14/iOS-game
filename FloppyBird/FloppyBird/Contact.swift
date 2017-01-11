@@ -13,4 +13,5 @@ class Contact {
     class var log:UInt32        { return 1 << 1 }
     class var floppy:UInt32     { return 1 << 2 }
     class var score:UInt32      { return 1 << 3 }
+    class var cloud:UInt32      { return 1<<4 }
 }

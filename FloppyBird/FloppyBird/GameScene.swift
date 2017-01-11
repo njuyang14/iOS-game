@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene,  SKPhysicsContactDelegate{
     
     // MARK: - Private class constants
     private let label = SKLabelNode()
@@ -47,13 +47,15 @@ class GameScene: SKScene {
         label.fontName = "Arial"
         label.fontColor = SKColor.white
         label.fontSize = 44.0
-        label.text = "GameScene"
+        label.text = "SCORE"
         label.position = kScreenCenter
         
         //add enemy
         let appear = SKAction.run ({() in self.enemyAppear()})
-        let delay = SKAction.wait(forDuration: (2.0))
+        let delay = SKAction.wait(forDuration: (3.0))
         self.run(SKAction.repeatForever(SKAction.sequence([appear,delay])))
+        
+        physicsWorld.contactDelegate = self
         
         self.addChild(label)
         self.addChild(bird)
@@ -84,6 +86,18 @@ class GameScene: SKScene {
             if let cloud = one as? Clouds{
                 cloud.update(delta: delta)
             }
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        switch(contactMask){
+        case Contact.floppy|Contact.cloud:
+            bird.score += 1
+            let cloud = contact.bodyA.node
+            cloud?.removeFromParent()
+        default:
+            return
         }
     }
     

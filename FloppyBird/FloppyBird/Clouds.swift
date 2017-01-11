@@ -11,13 +11,21 @@ import SpriteKit
 
 class Clouds:SKSpriteNode {
     private let animationName = "clouds"
-    private let moveSpeed:CGFloat = 5
+    private let moveSpeed:CGFloat = 15
     convenience init() {
         let texture = Textures.sharedInstance.textureWith(name: "cloud")
         self.init(texture: texture,color: SKColor.white,size: texture.size())
         self.setScale(0.5)
+        setupPhysics()
     }
     
+    private func setupPhysics() {
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.categoryBitMask = Contact.cloud
+        self.physicsBody?.collisionBitMask = 0x0
+        self.physicsBody?.contactTestBitMask = 0x0
+    }
     public func setInitPos(pos:CGPoint){
         self.position = pos
     }
