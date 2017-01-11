@@ -14,9 +14,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
     private let label = SKLabelNode()
     
     private var lastUpdateTime: TimeInterval = 0
+    var gameContinue = true
     
     private let bird = Bird()
     private let cloudController = CloudController()
+    private let hill = Hill()
+    private let ground = Ground()
     
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
@@ -44,28 +47,44 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
     private func setup() {
         self.backgroundColor = Colors.color(rgb: Colors.sky)
         
-        label.fontName = "Arial"
+        label.fontName = "editundo"
         label.fontColor = SKColor.white
-        label.fontSize = 44.0
-        label.text = "SCORE"
-        label.position = kScreenCenter
+        label.fontSize = 24.0
+        label.text = "SCORE: 0"
+        label.position = CGPoint(x:60, y:kViewSize.height-30)
         
         //add enemy
-        let appear = SKAction.run ({() in self.enemyAppear()})
+        let appear = SKAction.run ({() in self.cloudAppear()})
         let delay = SKAction.wait(forDuration: (3.0))
         self.run(SKAction.repeatForever(SKAction.sequence([appear,delay])))
+        
+        //add enemy
+        let appearEnemy = SKAction.run ({() in self.enemyAppear()})
+        let delayEnemy = SKAction.wait(forDuration: (5.0))
+        self.run(SKAction.repeatForever(SKAction.sequence([appearEnemy,delayEnemy])))
+
+        //add hill
+        //add ground
+        
         
         physicsWorld.contactDelegate = self
         
         self.addChild(label)
         self.addChild(bird)
-       //self.addChild(cloudController)
+       self.addChild(hill)
+        self.addChild(ground)
     }
     
-    func enemyAppear(){
+    func cloudAppear(){
         let cloud = Clouds()
         cloud.setInitPos(pos: CGPoint(x:frame.size.width,y:frame.size.height*random(min:0.3,max:0.8)))//init appear pos
         self.addChild(cloud)
+    }
+    
+    func enemyAppear(){
+        let enemy = Enemy()
+        enemy.setInitPos(pos: CGPoint(x:frame.size.width,y:frame.size.height*random(min:0.3,max:0.8)))//init appear pos
+        self.addChild(enemy)
     }
     
     // MARK: - Update
@@ -87,6 +106,18 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
                 cloud.update(delta: delta)
             }
         }
+        for one in self.children{
+            if let enemy = one as? Enemy{
+                enemy.update(delta: delta)
+            }
+        }
+        //hill.update(delta: delta)
+        ground.update(delta: delta)
+        
+        //gameover
+        if(!gameContinue){
+            loadScene()
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -94,8 +125,15 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
         switch(contactMask){
         case Contact.floppy|Contact.cloud:
             bird.score += 1
+            label.text = "SCORE: " + String(bird.score)
             let cloud = contact.bodyA.node
             cloud?.removeFromParent()
+        case Contact.enemy|Contact.floppy:
+            let enemy = contact.bodyA.node
+            enemy?.removeFromParent()
+            let mybird = contact.bodyB.node
+            mybird?.removeFromParent()
+            gameContinue = false
         default:
             return
         }

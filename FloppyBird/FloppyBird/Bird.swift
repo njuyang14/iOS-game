@@ -46,12 +46,17 @@ class Bird:SKSpriteNode {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height / 3, center: self.anchorPoint)
         self.physicsBody?.categoryBitMask = Contact.floppy
         self.physicsBody?.collisionBitMask = Contact.scene
-        self.physicsBody?.contactTestBitMask = Contact.scene | Contact.cloud | Contact.score
+        self.physicsBody?.contactTestBitMask = Contact.scene | Contact.cloud | Contact.score | Contact.enemy
     }
     
     func fly(){
-         self.physicsBody!.velocity = CGVector.zero
+        self.physicsBody!.velocity = CGVector.zero
         let impulse = CGVector(dx:0,dy:25)
         self.physicsBody?.applyImpulse(impulse)
     }
+    
+    func up(){
+        self.physicsBody!.velocity = CGVector.zero
+        let impulse = CGVector(dx:0,dy:10)
+        self.physicsBody?.applyImpulse(impulse)    }
 }
