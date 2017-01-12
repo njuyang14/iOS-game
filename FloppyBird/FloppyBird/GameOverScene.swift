@@ -11,6 +11,7 @@ import SpriteKit
 class GameOverScene: SKScene {
     
     // MARK: - Private class constants
+    private var myScore: Int = 0
     private let label = SKLabelNode()
     private let myBird = SKSpriteNode(imageNamed:"")
     
@@ -23,18 +24,23 @@ class GameOverScene: SKScene {
         super.init(size: size)
     }
     
+    convenience init(size: CGSize, score: Int) {
+        self.init(size: size)
+        myScore = score
+    }
+    
     override func didMove(to view: SKView) {
         setup()
     }
     
     // MARK: - Setup
     private func setup() {
-        self.backgroundColor = SKColor.black
+        self.backgroundColor = Colors.color(rgb: Colors.sky)
         
         label.fontName = "Arial"
         label.fontColor = SKColor.white
         label.fontSize = 44.0
-        label.text = "GameOverScene"
+        label.text = "SCORE:"+String(myScore)
         label.position = kScreenCenter
         
         self.addChild(label)

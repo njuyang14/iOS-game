@@ -153,7 +153,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
     
     // MARK: - Load Scene
     private func loadScene() {
-        let scene = GameOverScene(size: kViewSize)
+        let scene = GameOverScene(size: kViewSize,score: bird.score)
         let transition = SKTransition.fade(with: SKColor.black, duration: 0.5)
         
         self.view?.presentScene(scene, transition: transition)
