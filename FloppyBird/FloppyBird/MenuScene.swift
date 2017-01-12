@@ -1,61 +1,69 @@
 //
 //  MenuScene.swift
-//  FlappyBird
+//  eatingpig
 //
-
+//  Created by mm on 17/1/9.
+//  Copyright © 2017年 mm. All rights reserved.
+//
 
 import SpriteKit
 
-class MenuScene: SKScene {
+class MenuScene :SKScene
+{
+    private let ground = Ground()
+//    private let title = Title()
+//    private let playButton = PlayButton()
     
-    // MARK: - Private class constants
-    private let label = SKLabelNode()
+    private var lastUpdateTime:TimeInterval=0.0
     
-    // MARK: - Init
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
     }
     
-    override init(size: CGSize) {
+    override init(size: CGSize)
+    {
         super.init(size: size)
     }
     
-    override func didMove(to view: SKView) {
+    override func didMove(to view:SKView)
+    {
         setup()
-    }
-    
-    // MARK: - Setup
-    private func setup() {
-        self.backgroundColor = SKColor.black
         
-        label.fontName = "Arial"
-        label.fontColor = SKColor.white
-        label.fontSize = 44.0
-        label.text = "MenuScene"
-        label.position = kScreenCenter
-        
-        self.addChild(label)
+//        Sound.sharedInstance.playMusic()
     }
     
-    // MARK: - Update
-    override func update(_ currentTime: TimeInterval) {
+    private func setup()
+    {
+        self.backgroundColor = SKColor(red: CGFloat(0x4b), green: CGFloat(0xa3), blue: CGFloat(0xff), alpha: 1.0)
+    
+        self.addChild(ground)
+//        self.addChild(title)
+//        self.addChild(playButton)
     }
     
-    // MARK: - Touch Events
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch:UITouch = touches.first! as UITouch
+    override func update(_ currentTime: TimeInterval)
+    {
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+/*        let touch:UITouch = touches.first! as UITouch
         let touchLocation = touch.location(in: self)
         
-        if label.contains(touchLocation) {
+        if playButton.contains(touchLocation)
+        {
+            playButton.tapped()
             loadScene()
         }
+*/
     }
     
-    // MARK: - Load Scene
-    private func loadScene() {
-        let scene = GameScene(size: kViewSize)
-        let transition = SKTransition.fade(with: SKColor.black, duration: 0.5)
+    private func loadScene()
+    {
+        let scene = GameScene(size: UIScreen.main.bounds.size)
+        let transition = SKTransition.fade(with: SKColor.black, duration: 1.0)
         
-        self.view?.presentScene(scene, transition: transition)
+        self.view?.presentScene(scene, transition:transition)
     }
 }
