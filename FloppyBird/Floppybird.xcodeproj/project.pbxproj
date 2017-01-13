@@ -46,7 +46,7 @@
 		2FC5C0BF1E24E24A0006CC78 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		2FC5C0C11E24E2560006CC78 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
 		2FEDA75A1E239B460054A060 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		3F1876591D96E0F100D63E5A /* FloppyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloppyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1876591D96E0F100D63E5A /* Floppybird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floppybird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F18765C1D96E0F100D63E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F1876621D96E0F100D63E5A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		3F1876641D96E0F100D63E5A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		3F18765A1D96E0F100D63E5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F1876591D96E0F100D63E5A /* FloppyBird.app */,
+				3F1876591D96E0F100D63E5A /* Floppybird.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F1876581D96E0F100D63E5A /* FloppyBird */ = {
+		3F1876581D96E0F100D63E5A /* Floppybird */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F1876711D96E0F100D63E5A /* Build configuration list for PBXNativeTarget "FloppyBird" */;
+			buildConfigurationList = 3F1876711D96E0F100D63E5A /* Build configuration list for PBXNativeTarget "Floppybird" */;
 			buildPhases = (
 				3F1876551D96E0F100D63E5A /* Sources */,
 				3F1876561D96E0F100D63E5A /* Frameworks */,
@@ -209,9 +209,9 @@
 			);
 			dependencies = (
 			);
-			name = FloppyBird;
+			name = Floppybird;
 			productName = FloppyBird;
-			productReference = 3F1876591D96E0F100D63E5A /* FloppyBird.app */;
+			productReference = 3F1876591D96E0F100D63E5A /* Floppybird.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F1876541D96E0F000D63E5A /* Build configuration list for PBXProject "FloppyBird" */;
+			buildConfigurationList = 3F1876541D96E0F000D63E5A /* Build configuration list for PBXProject "Floppybird" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F1876581D96E0F100D63E5A /* FloppyBird */,
+				3F1876581D96E0F100D63E5A /* Floppybird */,
 			);
 		};
 /* End PBXProject section */
@@ -436,7 +436,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F1876541D96E0F000D63E5A /* Build configuration list for PBXProject "FloppyBird" */ = {
+		3F1876541D96E0F000D63E5A /* Build configuration list for PBXProject "Floppybird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F18766F1D96E0F100D63E5A /* Debug */,
@@ -445,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F1876711D96E0F100D63E5A /* Build configuration list for PBXNativeTarget "FloppyBird" */ = {
+		3F1876711D96E0F100D63E5A /* Build configuration list for PBXNativeTarget "Floppybird" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F1876721D96E0F100D63E5A /* Debug */,

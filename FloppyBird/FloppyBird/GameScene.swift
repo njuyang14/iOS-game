@@ -1,12 +1,13 @@
 //
 //  GameScene.swift
-//  FloppyBird
+//  BBbird
 //
 //  Created by Jeremy Novak on 9/24/16.
 //  Copyright © 2016 SpriteKit Book. All rights reserved.
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene,  SKPhysicsContactDelegate{
     
@@ -20,6 +21,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
     private let cloudController = CloudController()
     private let hill = Hill()
     private let ground = Ground()
+    var sun = SKSpriteNode()
     
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
@@ -66,9 +68,14 @@ class GameScene: SKScene,  SKPhysicsContactDelegate{
         //add hill
         //add ground
         
+        //sun button
+        let sunTexture = Textures.sharedInstance.textureWith(name: "sun")
+        sun = SKSpriteNode(texture: sunTexture,color: SKColor.white,size: sunTexture.size())
+        sun.position = CGPoint(x:kViewSize.width-50, y:kViewSize.height-50)
         
         physicsWorld.contactDelegate = self
         
+        self.addChild(sun)
         self.addChild(label)
         self.addChild(bird)
        self.addChild(hill)

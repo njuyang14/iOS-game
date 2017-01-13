@@ -13,6 +13,7 @@ class MenuScene :SKScene
     private let ground = Ground()
     private let hill = Hill()
     var play = SKSpriteNode()
+    var sun = SKSpriteNode()
    // private let title = Title()
     //private let playButton = PlayButton()
     
@@ -56,6 +57,12 @@ class MenuScene :SKScene
         play = SKSpriteNode(texture: playTexture,color: SKColor.white,size: playTexture.size())
         play.position = CGPoint(x:logo.position.x, y:logo.position.y+logo.size.height)
         
+        //sun button
+        let sunTexture = Textures.sharedInstance.textureWith(name: "sun")
+        sun = SKSpriteNode(texture: sunTexture,color: SKColor.white,size: sunTexture.size())
+        sun.position = CGPoint(x:kViewSize.width-50, y:kViewSize.height-50)
+        
+        self.addChild(sun)
         self.addChild(ground)
         self.addChild(hill)
         self.addChild(logo)

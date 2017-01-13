@@ -1,11 +1,13 @@
 //
 //  GameOverScene.swift
-//  FloppyBird
+//  eatingpig
 //
-//  Created by Jeremy Novak on 9/24/16.
-//  Copyright © 2016 SpriteKit Book. All rights reserved.
+//  Created by mm on 17/1/9.
+//  Copyright © 2017年 mm. All rights reserved.
 //
 
+
+import Social
 import SpriteKit
 
 class GameOverScene: SKScene {
@@ -14,7 +16,7 @@ class GameOverScene: SKScene {
     private var myScore: Int = 0
     private let label = SKLabelNode()
     private let myBird = SKSpriteNode(imageNamed:"")
-    
+    private  var retry = SKNode()
     // MARK: - Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,13 +39,18 @@ class GameOverScene: SKScene {
     private func setup() {
         self.backgroundColor = Colors.color(rgb: Colors.sky)
         
+        let reTexture = Textures.sharedInstance.textureWith(name: "RetryButton")
+        retry = SKSpriteNode(texture: reTexture,color: SKColor.white,size: reTexture.size())
+        retry.position = kScreenCenter
+        
         label.fontName = "Arial"
         label.fontColor = SKColor.white
         label.fontSize = 44.0
-        label.text = "SCORE:"+String(myScore)
-        label.position = kScreenCenter
+        label.text = "Your Score: "+String(myScore)
+        label.position = CGPoint(x: kScreenCenter.x, y: (kScreenCenter.y+30))
         
         self.addChild(label)
+        self.addChild(retry)
     }
     
     // MARK: - Update
@@ -55,8 +62,10 @@ class GameOverScene: SKScene {
         let touch:UITouch = touches.first! as UITouch
         let touchLocation = touch.location(in: self)
         
-        if label.contains(touchLocation) {
+        if retry.contains(touchLocation) {
             loadScene()
+        }
+        else if label.contains(touchLocation){
         }
     }
     
