@@ -1,0 +1,19 @@
+//
+//  Contact.swift
+//  EatingBird
+//
+//  Created by yang on 17/1.
+//  Copyright © 2017年 SpriteKit Book. All rights reserved.
+//
+
+import Foundation
+
+class Contact
+{
+    class var scene:UInt32      { return 1 << 0 }
+    class var log:UInt32        { return 1 << 1 }
+    class var floppy:UInt32     { return 1 << 2 }
+    class var score:UInt32      { return 1 << 3 }
+    class var cloud:UInt32      { return 1 << 4 }
+    class var enemy:UInt32      { return 1 << 5 }
+}
