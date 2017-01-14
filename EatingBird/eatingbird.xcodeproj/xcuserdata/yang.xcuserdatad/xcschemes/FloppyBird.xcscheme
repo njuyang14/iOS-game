@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F1876581D96E0F100D63E5A"
-               BuildableName = "Floppybird.app"
-               BlueprintName = "Floppybird"
-               ReferencedContainer = "container:Floppybird.xcodeproj">
+               BuildableName = "eatingbird.app"
+               BlueprintName = "eatingbird"
+               ReferencedContainer = "container:eatingbird.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F1876581D96E0F100D63E5A"
-            BuildableName = "Floppybird.app"
-            BlueprintName = "Floppybird"
-            ReferencedContainer = "container:Floppybird.xcodeproj">
+            BuildableName = "eatingbird.app"
+            BlueprintName = "eatingbird"
+            ReferencedContainer = "container:eatingbird.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F1876581D96E0F100D63E5A"
-            BuildableName = "Floppybird.app"
-            BlueprintName = "Floppybird"
-            ReferencedContainer = "container:Floppybird.xcodeproj">
+            BuildableName = "eatingbird.app"
+            BlueprintName = "eatingbird"
+            ReferencedContainer = "container:eatingbird.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3F1876581D96E0F100D63E5A"
-            BuildableName = "Floppybird.app"
-            BlueprintName = "Floppybird"
-            ReferencedContainer = "container:Floppybird.xcodeproj">
+            BuildableName = "eatingbird.app"
+            BlueprintName = "eatingbird"
+            ReferencedContainer = "container:eatingbird.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

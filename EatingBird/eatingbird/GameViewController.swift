@@ -2,7 +2,7 @@
 //  GameViewController.swift
 //  EatingBird
 //
-//  Created by yang on 16/12.
+//  Created by yang on 17/1.
 //  Copyright © 2016 SpriteKit Book. All rights reserved.
 //
 
